@@ -35,6 +35,9 @@ variable "kms_key_id" {
   type = string 
   default = null
 }
+variable "create_dns_record" { type = bool }
+variable "route53_zone_name" { type = string }
+variable "dns_name" { type = string }
 
 module "nginx_stack" {
   source = "../../modules/nginx_stack"
@@ -74,7 +77,11 @@ module "nginx_stack" {
   backup_retention_period    = var.backup_retention_period
   db_deletion_protection     = var.db_deletion_protection
   db_apply_immediately       = var.db_apply_immediately
-  kms_key_id                 = var.kms_key_id
+  kms_key_id                 = var.kms_key_id  
+  create_dns_record			 = var.create_dns_record
+  route53_zone_name 	     = var.route53_zone_name
+  dns_name         			 = var.dns_name
+
 }
 
 output "service_url" {
@@ -85,6 +92,12 @@ output "rds_endpoint" {
   value = module.nginx_stack.rds_endpoint
 }
 
-output "rds_master_user_secret_arn" {
-  value = module.nginx_stack.rds_master_user_secret_arn
+output "alb_dns_name" {
+  value = module.nginx_stack.alb_dns_name
 }
+
+output "app_fqdn" {
+  value = module.nginx_stack.app_fqdn
+  
+}
+

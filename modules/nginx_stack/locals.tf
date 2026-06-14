@@ -14,5 +14,13 @@ locals {
   }
 }
 
+ fqdn = var.route53_zone_name == null ? null : (
+    var.dns_name == null || var.dns_name == ""
+    ? var.route53_zone_name
+    : "${var.dns_name}.${var.route53_zone_name}"
+  )
+
+
+
   alb_log_bucket_name = var.alb_access_log_bucket_name != null ? var.alb_access_log_bucket_name : lower(substr(replace("${var.project}-${var.environment}-${var.service}-alb-logs", "_", "-"), 0, 63))
 }

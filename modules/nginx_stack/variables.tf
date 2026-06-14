@@ -156,3 +156,18 @@ variable "kms_key_id" {
   type    = string
   default = null
 }
+
+variable "create_dns_record" {
+  type    = bool
+  default = false
+}
+
+variable "route53_zone_name" {
+  type    = string
+  default = null
+}
+
+variable "dns_name" {
+  type    = string
+  default = null
+}
