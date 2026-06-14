@@ -38,6 +38,7 @@ variable "kms_key_id" {
 variable "create_dns_record" { type = bool }
 variable "route53_zone_name" { type = string }
 variable "dns_name" { type = string }
+variable "zone_id" { type = string }
 
 module "nginx_stack" {
   source = "../../modules/nginx_stack"
@@ -81,6 +82,7 @@ module "nginx_stack" {
   create_dns_record			 = var.create_dns_record
   route53_zone_name 	     = var.route53_zone_name
   dns_name         			 = var.dns_name
+  zone_id                    = var.zone_id
 
 }
 
@@ -100,4 +102,6 @@ output "app_fqdn" {
   value = module.nginx_stack.app_fqdn
   
 }
+
+
 

@@ -171,3 +171,8 @@ variable "dns_name" {
   type    = string
   default = null
 }
+
+variable "zone_id" {
+  type    = string
+  default = null
+}
