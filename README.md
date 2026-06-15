@@ -62,7 +62,6 @@ terraform apply
 - Replace the shared/no-ingress SG design with separate ALB/ECS/DB SGs 
 - Change DB SG from 0.0.0.0/0:3306 to ECS SG -> 5432 
 - Remove hard-coded DB credentials; use Secrets Manager integration 
-- Add HTTPS + HTTP-to-HTTPS redirect on ALB  
 - Enable ALB and RDS deletion protection ,
 - Use both private subnets for the ECS service 
 - Add per-AZ NAT gateways and route tables for HA 
