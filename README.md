@@ -39,7 +39,8 @@ terraform init
 terraform plan
 terraform apply
 
-#### Nonprod folder is empty but can be replicated similar to prod
+#### Nonprod 
+nonprod folder is empty but can be replicated similar to prod
 
 
 ## Corrections made
