@@ -28,16 +28,18 @@
 │   ├── nonprod/│   
 │   └── prod/
 └── .gitignore
-```
+
 
 ## How to use
 
 ### Production
-```bash
+``bash
 cd envs/prod
 terraform init
 terraform plan
 terraform apply
+
+#### Nonprod folder is empty but can be replicated similar to prod
 
 
 ## Corrections made
