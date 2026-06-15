@@ -39,7 +39,8 @@ terraform init
 terraform plan
 terraform apply
 
-#### Nonprod folder is empty but can be replicated similar to prod
+#### Nonprod 
+nonprod folder is empty but can be replicated similar to prod
 
 
 ## Corrections made
@@ -64,7 +65,6 @@ terraform apply
 - Replace the shared/no-ingress SG design with separate ALB/ECS/DB SGs 
 - Change DB SG from 0.0.0.0/0:3306 to ECS SG -> 5432 
 - Remove hard-coded DB credentials; use Secrets Manager integration 
-- Add HTTPS + HTTP-to-HTTPS redirect on ALB  
 - Enable ALB and RDS deletion protection ,
 - Use both private subnets for the ECS service 
 - Add per-AZ NAT gateways and route tables for HA 
@@ -74,6 +74,6 @@ terraform apply
 
 ## Notes
 
-- Update `acm_certificate_arn` in using https alb listener.
+- Update `acm_certificate_arn` for using https alb listener.
 - Each environment root reuses the same shared module. Nonprod folder is empty, can be replicated similar to pord
 - strict security groups, Multi-AZ, encrypted RDS, managed DB secret, backups, final snapshot, logging, and autoscaling.
