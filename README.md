@@ -69,6 +69,6 @@ terraform apply
 
 ## Notes
 
-- Update `acm_certificate_arn` in using https alb listener.
+- Update `acm_certificate_arn` for using https alb listener.
 - Each environment root reuses the same shared module. Nonprod folder is empty, can be replicated similar to pord
 - strict security groups, Multi-AZ, encrypted RDS, managed DB secret, backups, final snapshot, logging, and autoscaling.
