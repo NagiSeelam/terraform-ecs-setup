@@ -58,7 +58,9 @@ terraform apply
 
 
 ## Improvements made
-
+ 
+- Created different terraform files for different components of ECS ( ex: ecs.tf , iam.tf, rds.tf ...ect)
+- Cretaed modules and envs for env specifc configs and reusability
 - Replace the shared/no-ingress SG design with separate ALB/ECS/DB SGs 
 - Change DB SG from 0.0.0.0/0:3306 to ECS SG -> 5432 
 - Remove hard-coded DB credentials; use Secrets Manager integration 
@@ -67,6 +69,8 @@ terraform apply
 - Use both private subnets for the ECS service 
 - Add per-AZ NAT gateways and route tables for HA 
 - Add provider version pinning, typed variables, and default tags 
+
+
 
 ## Notes
 

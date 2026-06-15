@@ -19,7 +19,7 @@ resource "aws_db_instance" "rds" {
   skip_final_snapshot         = false
   final_snapshot_identifier   = "${var.environment}-${var.service}-final-snapshot"
   backup_retention_period     = var.backup_retention_period
-  deletion_protection         = false
+  deletion_protection         = true
   publicly_accessible         = false
   vpc_security_group_ids      = [aws_security_group.database_sgrp.id]
   apply_immediately           = var.db_apply_immediately
